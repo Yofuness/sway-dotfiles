@@ -36,3 +36,7 @@ SAVEHIST=$HISTSIZE
 # Aliases
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+# Environment Variables
+
+export XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots

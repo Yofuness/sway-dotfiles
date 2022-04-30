@@ -26,8 +26,8 @@ set $menu wofi --show=drun --linues=5 --prompt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/johann/Pictures/Wallpapers/thomas-lipke-oIuDXlOJSiE-unsplash.jpg fill
-output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
+#output * bg $HOME/Pictures/Wallpapers/thomas-lipke-oIuDXlOJSiE-unsplash.jpg fill
+output * bg "$HOME/Pictures/Wallpapers/4K No Logo G655.jpg" fill
 #
 # Example configuration:
 #
@@ -277,7 +277,7 @@ bindsym $mod+ctrl+left exec playerctl previous
 bindsym $mod+ctrl+right exec playerctl next
 
 # Screenshot
-bindsym $mod+shift+P exec grimshot save screen
+bindsym $mod+shift+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot save output
 
 # My hotkeys for starting applications
 # gtk-launch is used so that it's launched according to the .desktop file
