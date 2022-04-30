@@ -1,0 +1,31 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: JetBrainsMono Nerd Font;
+	font-size: 12;
+	font-weight: bold;
+	min-height: 10;
+}
+
+#window {
+	border-radius: 10;
+	color: #cdd3e0;
+}
+
+#outer-box {
+	border-radius: 10px;
+	color: #cdd3e0;
+	background: rgba(40, 44, 59, 0.7);
+}
+
+#entry:selected {
+	border-radius: 10;
+	border: none;
+	background:  #3691ff;
+	/*color: #cdd3e0;*/
+	color: white;
+}
+
+#text {
+	padding: 5;
+}
