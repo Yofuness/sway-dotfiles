@@ -74,11 +74,9 @@ exec swayidle -w \
 		natural_scroll enabled
 #		middle_emulation enabled
 	}
-	input type:pointer {
-		tap enabled
-		natural_scroll enabled
-		middle_emulation enabled
-	}
+
+	input 1133:16461:Logitech_K400_Plus natural_scroll enabled
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -278,6 +276,7 @@ bindsym $mod+ctrl+right exec playerctl next
 
 # Screenshot
 bindsym $mod+shift+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot save output
+bindsym $mod+Alt+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot copy area
 
 # My hotkeys for starting applications
 # gtk-launch is used so that it's launched according to the .desktop file
@@ -337,3 +336,4 @@ exec /usr/lib/kdeconnectd
 
 exec export WLR_NO_HARDWARE_CURSORS=1
 
+exec xhost +
