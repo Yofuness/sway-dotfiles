@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-exec proptest 78 connector 84 1
+# exec bash -c "./proptest.sh"
 
 ### Variables
 #
@@ -26,8 +26,8 @@ set $menu wofi --show=drun --linues=5 --prompt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg $HOME/Pictures/Wallpapers/thomas-lipke-oIuDXlOJSiE-unsplash.jpg fill
-output * bg "$HOME/Pictures/Wallpapers/4K No Logo G655.jpg" fill
+output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
+#output * bg "/home/johann/Pictures/Wallpapers/IMG_2237.JPG" fill
 #
 # Example configuration:
 #
@@ -36,9 +36,12 @@ output * bg "$HOME/Pictures/Wallpapers/4K No Logo G655.jpg" fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
  output eDP-1 scale 1.25
-	output DP-1 position 0,0
-	output HDMI-A-1 position 1920,0
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
+output DP-4 position 1920,0
+output DP-5 position 0,0
 
 
 ### Idle configuration
@@ -50,10 +53,12 @@ output * bg "$HOME/Pictures/Wallpapers/4K No Logo G655.jpg" fill
 #          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 #          before-sleep 'swaylock -f -c 000000'
 #
+exec sway inhibit_idle fullscreen
 exec swayidle -w \
-	timeout 600 'swaylock' \
+	timeout 10000 'grimshot save output /tmp/screen.jpg; swaylock' \
 	before-sleep 'playerctl pause' \
-	before-sleep 'swaylock'
+	before-sleep 'grimshot save screen /tmp/screen.jpg; swaylock'
+bindsym $mod+Shift+Z exec swaylock
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -69,14 +74,9 @@ exec swayidle -w \
 #       middle_emulation enabled
 #   }
 #
-	input type:touchpad {
-		tap enabled
-		natural_scroll enabled
-#		middle_emulation enabled
+	input "2:10:TPPS/2_IBM_TrackPoint" {
+		pointer_accel 1
 	}
-
-	input 1133:16461:Logitech_K400_Plus natural_scroll enabled
-
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -156,10 +156,8 @@ exec swayidle -w \
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-
-    #Bind workspaces to monitors
-    workspace 1 output DP-1
-    workspace 6 output HDMI-A-1
+   	
+    bindsym $mod+Alt+D exec bash /home/johann/.config/sway/docked.sh
 #
 # Layout stuff:
 #
@@ -185,6 +183,9 @@ exec swayidle -w \
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Sway autotiling
+    exec autotiling
 #
 # Scratchpad:
 #
@@ -275,15 +276,23 @@ bindsym $mod+ctrl+left exec playerctl previous
 bindsym $mod+ctrl+right exec playerctl next
 
 # Screenshot
-bindsym $mod+shift+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot save output
+bindsym $mod+shift+P exec grimshot save screen
 bindsym $mod+Alt+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot copy area
+bindsym $mod+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot save area
 
 # My hotkeys for starting applications
 # gtk-launch is used so that it's launched according to the .desktop file
 bindsym $mod+shift+X exec gtk-launch org.gnome.Nautilus
+#bindsym $mod+shift+X exec gtk-launch nemo
 bindsym $mod+shift+F exec gtk-launch firefox
 bindsym $mod+shift+D exec gtk-launch discord
 bindsym $mod+shift+S exec gtk-launch spotify
+bindsym $mod+shift+m exec gtk-launch gnome-system-monitor
+
+# Floating apps
+
+for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [title="Quick Format Citation"] floating enable
 
 # Fix GTK+ applications taking 20+ seconds to start
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -302,6 +311,9 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Ubuntu 11'
 }
+
+# Set Current Desktop for tray icons
+set $XDG_CURRENT_DESKTOP Unity
 
 # wob configuration
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
@@ -327,13 +339,8 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Apps to autostart
 	
 	# Nextcloud desktop client
-	exec bash -c "wait 10; /usr/bin/nextcloud --background"
-exec mako
-
-# appps to autostart
-exec /usr/lib/kdeconnectd
-
-
-exec export WLR_NO_HARDWARE_CURSORS=1
-
-exec xhost +
+	exec bash -c "sleep 10; /usr/bin/nextcloud --background"
+	exec /usr/bin/easyeffects --hide-window
+	exec wlsunset -l 43.5 -L -80 -t 5000
+	exec ssh-add
+	exec kdeconnect-indicator

@@ -1,7 +1,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family:  Roboto, Helvetica, Arial, sans-serif;
+    /*font-family:  Roboto, Helvetica, Arial, sans-serif;*/
+    font-family:  JetBrainsMono Nerd Font;
     font-size: 12px;
     min-height: 0;
 }
@@ -43,6 +44,7 @@ tooltip label {
     border-radius: 7px;
     /*border-radius: 5px;*/
     margin-right: 5px;
+    font-family: Ariel;
     background:  #8f9aae /*#285bff #8ab4f8*/;
     color: white;
 }
