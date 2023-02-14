@@ -1,0 +1,38 @@
+#!/usr/bin/zsh
+
+
+wofi_options="Power Off \nReboot \nSuspend \nToggle Wifi \nToggle Bluetooth \nSystem Update" 
+
+choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Power Menu" | tail -n1)
+
+echo "Your choice is: " $choice
+
+case "$choice" in
+
+	*"Power Off"*)
+		poweroff
+		;;
+	*"Reboot"*)
+		reboot
+		;;
+	*"Suspend"*)
+		systemctl suspend
+		echo "Suspending... "
+		;;
+	*"Toggle Wifi"*)
+		wifi_status=$(nmcli radio wifi)
+		case $wifi_status in
+			enabled)
+				nmcli radio wifi off
+				notify-send "Wifi Disabled"
+				;;
+			disabled)
+				nmcli radio wifi on
+				notify-send "Wifi Enabled"
+				;;
+		esac
+			;;
+	*"System Update"*)
+		alacritty -e yay -Syu --noconfirm; read -n1 -r -p "Press any key to continue..." key
+		;;
+esac

@@ -1,0 +1,8 @@
+allow_images=true
+term=alacritty
+content_halign=start
+orientation=vertical
+hide_scrool=true
+insensitive=true
+dynamic_lines=true
+key_expand=Tab

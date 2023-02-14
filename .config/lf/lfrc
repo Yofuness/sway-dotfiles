@@ -1,0 +1,26 @@
+# Options
+	set ratios 1:1:3:5
+	set cleaner ~/.config/lf/cleaner
+	set previewer ~/.config/lf/preview
+	set icons
+	set preview true
+
+
+cmd newvim ${{
+	clear
+	echo "Enter name for new file: "
+	read filename
+	vim $filename
+}}
+
+cmd newfolder ${{
+	clear
+	echo "Enter name for new folder: "
+	read dirname
+	mkdir $dirname
+}}
+
+# Bindings
+	map D delete
+	map <c-v> newvim
+	map <c-f> newfolder
