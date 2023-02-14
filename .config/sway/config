@@ -196,7 +196,7 @@ bindsym $mod+Shift+Z exec swaylock
     bindsym $mod+a focus parent
 
     # Sway autotiling
-    exec autotiling
+    exec autotiling-rs
 #
 # Scratchpad:
 #

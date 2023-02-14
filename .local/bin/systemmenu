@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 
-wofi_options="Power Off \nReboot \nSuspend \nToggle Wifi \nToggle Bluetooth \nSystem Update" 
+wofi_options="Power Off \nReboot \nSuspend \nLock \nToggle Wifi \nToggle Bluetooth \nSystem Update" 
 
 choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Power Menu" | tail -n1)
 
@@ -34,5 +34,8 @@ case "$choice" in
 			;;
 	*"System Update"*)
 		alacritty -e yay -Syu --noconfirm; read -n1 -r -p "Press any key to continue..." key
+		;;
+	*"Lock"*)
+		swaylock
 		;;
 esac
