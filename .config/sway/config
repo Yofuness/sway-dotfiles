@@ -88,9 +88,6 @@ bindsym $mod+Shift+Z exec swaylock
 		repeat_delay 200
 	}
 
-	input "2:10:TPPS/2_IBM_TrackPoint" {
-		pointer_accel 1
-	}
 
 ### Key bindings
 #
