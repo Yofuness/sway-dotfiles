@@ -362,9 +362,6 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # Polkit configuration (for authentication window)
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# Power saving (yay)
-bindsym $mod+Shift+B exec "sudo echo 1 > /sys/devices/pci0000:00/0000:00:19.0/remove"
-
 # Apps to autostart
 	
 	# Nextcloud desktop client
