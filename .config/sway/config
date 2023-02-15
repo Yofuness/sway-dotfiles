@@ -57,7 +57,8 @@ exec sway inhibit_idle fullscreen
 exec swayidle -w \
 	timeout 10000 'swaylock' \
 	before-sleep 'playerctl pause' \
-	before-sleep 'swaylock' \
+	before-sleep 'swaylock' 
+
 bindsym $mod+Shift+Z exec swaylock
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
