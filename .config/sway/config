@@ -368,3 +368,4 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	exec wlsunset -l 43.5 -L -80 -t 5000
 	exec ssh-add
 	exec kdeconnect-indicator
+	exec mako
