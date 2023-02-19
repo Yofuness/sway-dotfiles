@@ -292,6 +292,10 @@ bindsym $mod+z exec playerctl -p spotify play-pause
 bindsym $mod+x exec playerctl -p spotify previous
 bindsym $mod+c exec playerctl -p spotify next
 
+bindsym $mod+period exec mpc next
+bindsym $mod+comma exec mpc prev
+bindsym $mod+slash exec mpc toggle
+
 # Screenshot
 bindsym $mod+shift+P exec grimshot save screen
 bindsym $mod+Alt+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot copy area
