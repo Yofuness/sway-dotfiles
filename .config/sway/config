@@ -313,6 +313,7 @@ bindsym $mod+shift+S exec gtk-launch spotify
 bindsym $mod+shift+m exec gtk-launch gnome-system-monitor
 bindsym $mod+Shift+a exec gtk-launch com.github.wwmm.easyeffects
 bindsym $mod+Shift+O exec gtk-launch blueberry
+bindsym $mod+Shift+I exec gtk-launch clightc
 
 # Other Custom Keybinds
 bindsym ctrl+alt+delete exec systemmenu
@@ -369,7 +370,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	# Nextcloud desktop client
 	exec bash -c "sleep 10; /usr/bin/nextcloud --background"
 	exec /usr/bin/easyeffects --hide-window
-	exec wlsunset -l 43.5 -L -80 -t 5000
 	exec ssh-add
 	exec kdeconnect-indicator
 	exec mako
+	exec bash -c "sleep 10; clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log"
