@@ -1,6 +1,5 @@
 #!/bin/sh
-export bgpids = $(pgrep swaybg)
-kill -9 $bgpids
+export bgpids=$(pgrep swaybg)
 swaybg -i $(find Wallpapers/. -type f | shuf -n1) -m fill &
 OLD_PID=$!
 while true; do
