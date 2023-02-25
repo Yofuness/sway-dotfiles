@@ -369,8 +369,8 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	
 	# Nextcloud desktop client
 	exec bash -c "sleep 10; /usr/bin/nextcloud --background"
-	exec /usr/bin/easyeffects --hide-window
+	exec easyeffects --gapplication-service
 	exec ssh-add
 	exec kdeconnect-indicator
 	exec mako
-	exec bash -c "sleep 10; clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log"
+	exec clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log"
