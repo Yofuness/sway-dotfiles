@@ -195,6 +195,9 @@ bindsym $mod+Shift+Z exec swaylock
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+	
+	# Sticky a window
+	bindsym $mod+Alt+S sticky toggle
 
     # Sway autotiling
     exec autotiling-rs
