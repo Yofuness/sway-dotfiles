@@ -376,4 +376,4 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	exec ssh-add
 	exec kdeconnect-indicator
 	exec mako
-	exec clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log"
+	exec clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log
