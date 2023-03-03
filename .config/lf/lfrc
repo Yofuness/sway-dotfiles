@@ -17,7 +17,7 @@ cmd newfolder ${{
 	clear
 	echo "Enter name for new folder: "
 	read dirname
-	mkdir $dirname
+	mkdir "$dirname"
 }}
 
 # Bindings
