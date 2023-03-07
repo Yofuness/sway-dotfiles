@@ -26,7 +26,8 @@ set $menu wofi --show=drun --linues=5 --prompt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
+#output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
+output * bg "/home/johann/Pictures/Wallpapers/eberhard-grossgasteiger-7hS1iOwaWv0-unsplash.jpg" fill
 #output * bg "/home/johann/Pictures/Wallpapers/IMG_2237.JPG" fill
 #
 # Example configuration:
