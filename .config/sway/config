@@ -299,6 +299,8 @@ bindsym $mod+c exec playerctl -p spotify next
 bindsym $mod+period exec mpc next
 bindsym $mod+comma exec mpc prev
 bindsym $mod+slash exec mpc toggle
+bindsym $mod+bracketleft exec mpc seekthrough -00:00:05
+bindsym $mod+bracketright exec mpc seekthrough +00:00:05
 
 # Screenshot
 bindsym $mod+shift+P exec grimshot save screen
