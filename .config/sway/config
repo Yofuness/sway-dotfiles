@@ -103,6 +103,7 @@ bindsym $mod+Shift+Z exec swaylock
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym XF86Search exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
