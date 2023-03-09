@@ -1,0 +1,37 @@
+#!/usr/bin/zsh
+
+wofi_options="Assign workspace 9-10\nAssign workspace 5-8\nAssign workspace 1-4"
+choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Workspace Assignment" | tail -n1)
+
+case "$choice" in
+
+	*"Assign workspace 9-10"*)
+		swaymsg workspace 9 output eDP-1
+		swaymsg workspace 10 output eDP-1
+		;;
+	*"Assign workspace 5-8"*)
+		monitors=$(swaymsg --pretty -t get_outputs | grep Output | sed 's/Output //g' | sed "s/'.*//g")
+		choose_mon=$(echo $monitors | wofi --lines=8 --show dmenu -p "Select monitor" | tail -n1)
+		swaymsg workspace 5 output $choose_mon
+		swaymsg workspace 6 output $choose_mon
+		swaymsg workspace 7 output $choose_mon
+		swaymsg workspace 8 output $choose_mon
+		;;
+	*"Assign workspace 1-4"*)
+		monitors=$(swaymsg --pretty -t get_outputs | grep Output | sed 's/Output //g' | sed "s/'.*//g")
+		choose_mon=$(echo $monitors | wofi --lines=8 --show dmenu -p "Select monitor" | tail -n1)
+		swaymsg workspace 1 output $choose_mon
+		swaymsg workspace 2 output $choose_mon
+		swaymsg workspace 3 output $choose_mon
+		swaymsg workspace 4 output $choose_mon
+		;;
+esac
+
+
+
+
+
+#wofi_options=$(swaymsg --pretty -t get_outputs | grep Output | sed 's/Output //g' | sed "s/'.*//g")
+#choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Monitor Menu" | tail -n1)
+#
+#echo $choice | wofi --lines=8 --show dmenu -p "Hello!"
