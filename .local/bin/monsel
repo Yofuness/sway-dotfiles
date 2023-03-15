@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
-wofi_options="Assign workspace 9-10\nAssign workspace 5-8\nAssign workspace 1-4"
-choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Workspace Assignment" | tail -n1)
+#wofi_options="Assign workspace 9-10\nAssign workspace 5-8\nAssign workspace 1-4"
+#choice=$(echo $wofi_options | wofi --lines=8 --show dmenu -p "Workspace Assignment" | tail -n1)
 
 workSpaceAssign () {
 	for i in {$1..$2}
@@ -13,7 +13,7 @@ workSpaceAssign () {
 
 monSelect () {
 		monitors=$(swaymsg --pretty -t get_outputs | grep Output | sed 's/Output //g' | sed "s/'.*//g")
-		choose_mon=$(echo $monitors | wofi --lines=8 --show dmenu -p "Select monitor" | tail -n1)
+		choose_mon=$(echo $monitors | wofi --lines=8 --show dmenu -p "$message" | tail -n1)
 }
 
 workSpaceMenu () {
@@ -33,17 +33,37 @@ case "$choice" in
 esac
 }
 
+profile_apply () {
+	profile_1
+	for i in {1..$numMons}
+	do
+		message="Monitor" + "$i"
+		monSelect $message
+		pos=posMon$i
+		monWS=monWS$i
+		monWE=monWE$i
+		swaymsg output $choose_mon pos $pos
+		workSpaceAssign $monWS $monWE $choose_mon
+	done
+}
+
+
 
 # Work Profile
 
 profile_1 () {
 	posMon1="1113 1080"
+	monWS1=9
+	monWE1=10
 	posMon2="0 0"
+	monWS2=1
+	monWE2=4
 	posMon3="1920 0"
+	monWS3=5
+	monWS3=8
+	numMons=3
 }
 
 
 
-
-
-workSpaceMenu
+profile_apply

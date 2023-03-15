@@ -319,6 +319,7 @@ bindsym $mod+shift+D exec gtk-launch discord
 bindsym $mod+shift+S exec gtk-launch spotify
 bindsym $mod+shift+m exec gtk-launch gnome-system-monitor
 bindsym $mod+Shift+a exec gtk-launch com.github.wwmm.easyeffects
+bindsym $mod+Alt+A   exec bash -c "killall -9 easyeffects; easyeffects --gapplication-service"
 bindsym $mod+Shift+O exec gtk-launch blueberry
 bindsym $mod+Shift+I exec gtk-launch clightc
 
