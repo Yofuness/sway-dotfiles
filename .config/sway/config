@@ -315,7 +315,8 @@ bindsym $mod+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot sav
 bindsym $mod+Shift+X exec alacritty -e lf
 #bindsym $mod+shift+X exec gtk-launch nemo
 bindsym $mod+shift+F exec gtk-launch firefox
-bindsym $mod+shift+D exec gtk-launch discord
+#bindsym $mod+shift+D exec gtk-launch discord
+bindsym $mod+shift+D exec gtk-launch gtkcord4
 bindsym $mod+shift+S exec gtk-launch spotify
 bindsym $mod+shift+m exec gtk-launch gnome-system-monitor
 bindsym $mod+Shift+a exec gtk-launch com.github.wwmm.easyeffects
