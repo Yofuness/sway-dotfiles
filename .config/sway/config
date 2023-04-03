@@ -333,11 +333,6 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [title="Quick Format Citation"] floating enable
 for_window [app_id="com.github.wwmm.easyeffects"] floating enable
 
-# Fix GTK+ applications taking 20+ seconds to start
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
 # perhaps fix
 exec systemctl --user import-environment
 exec_always import-gsettings
@@ -350,9 +345,6 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Ubuntu 11'
 }
-
-# Set Current Desktop for tray icons
-set $XDG_CURRENT_DESKTOP Unity
 
 # wob configuration
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
