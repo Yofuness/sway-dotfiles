@@ -39,6 +39,7 @@ alias s="watch -n1"
 alias mpv="mpv --hwdec=auto"
 alias dmenu="wofi -d"
 alias config='git --git-dir=$HOME/dots --work-tree=$HOME'
+alias sc-imh='rview /usr/share/sc-im/sc-im_help'
 
 ## opam configuration
 #[[ ! -r /home/johann/.opam/opam-init/init.zsh ]] || source /home/johann/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
