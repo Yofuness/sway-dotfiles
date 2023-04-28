@@ -47,7 +47,6 @@ alias sc-imh='rview /usr/share/sc-im/sc-im_help'
 # Environment Variables
 #
 export XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots
-export XDG_CURRENT_DESKTOP=sway
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Source stuff from private zsh config
