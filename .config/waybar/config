@@ -26,11 +26,11 @@
         "format": "{:%a %Y %b %d %I:%M %p}"
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": "  {usage}%",
 	"on-click": "alacritty -e bashtop"
     },
     "memory": {
-        "format": " {}%",
+        "format": "  {}%",
 	"on-click": "alacritty -e htop"
     },
     "temperature": {
@@ -46,7 +46,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["  ", "  ", "  ", "  ", "  "],
 	"on-click": "alacritty -e sudo powertop",
 	"interval": 10
     },
@@ -81,10 +81,10 @@
    },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
-            "headphones": "",
-            "default": ["", ""]
+            "headphones": " ",
+            "default": [" ", " "]
         },
         "on-click": "pavucontrol"
     },
