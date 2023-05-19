@@ -348,16 +348,17 @@ exec_always {
     gsettings set $gnome-schema font-name 'Ubuntu 11'
 }
 
-# wob configuration
-set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+	# wob configuration
+	set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+	exec_always bash -c "rm $XDG_RUNTIME_DIR/wob.sock"
+	exec_always mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 	# brightness
 	bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
-bindsym XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+	bindsym XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
 
 
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+	exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 	# volume
 	bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK

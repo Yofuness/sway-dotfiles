@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+sudo chvt 5
+for i in {1..200}
+do
+	sudo proptest $i connector 99 1 >> /dev/null
+#	echo "done $i"
+done
+sudo chvt 1
