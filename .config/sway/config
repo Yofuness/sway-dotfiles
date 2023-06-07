@@ -280,6 +280,9 @@ client.unfocused        #282c34 #282c34 #282c34 #282c34 #282c34
 # Window border removal
 default_border pixel 3
 
+# Automagically hide mouse cursor
+seat * hide_cursor 8000
+
 # Touchpad Natural Scrolling
 
 input type:touchpad {
