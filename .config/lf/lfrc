@@ -10,7 +10,7 @@ cmd newvim ${{
 	clear
 	echo "Enter name for new file: "
 	read filename
-	vim $filename
+	nvim $filename
 }}
 
 cmd newfolder ${{
