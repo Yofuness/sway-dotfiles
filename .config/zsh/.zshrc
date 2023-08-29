@@ -69,7 +69,9 @@ alias sc-imh='rview /usr/share/sc-im/sc-im_help'
 # Environment Variables
 #
 export XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER='nvim +Man!'
+export MANPAGER='less'
 
 # Source stuff from private zsh config
 source $HOME/.config/zsh/private
