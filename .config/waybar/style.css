@@ -8,8 +8,9 @@
 }
 
 window#waybar {
-    background: rgba(40, 44, 59, 1) /*rgba(43, 48, 59, 0.7)*/;
+/*    background: rgba(40, 44, 59, 1) rgba(43, 48, 59, 0.7);*/
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+	background: #1a191e;
     border: none;
     color: #cdd3e0;
     border-radius: 10px;
@@ -33,25 +34,28 @@ tooltip label {
 }
 
 #workspaces button.focused {
-    background: #3691ff;
-    border-top: 3px solid #04BF8A;
+/*    background: #3691ff;*/
+	background: #e99d20;
+    border-top: 3px solid #463023;
     border-radius: 10px;
     /*border-bottom: 3px solid white;*/
 }
 
-#mode, #clock, #battery, #cpu, #ram, #tray, #memory, #temperature, #network,#bluetooth, #pulseaudio {
+#mode, #window, #clock, #battery, #cpu, #ram, #tray, #memory, #temperature, #network,#bluetooth, #pulseaudio {
     padding: 0 10px;
     border-radius: 7px;
     /*border-radius: 5px;*/
     margin-right: 5px;
     font-family: Ariel;
-    background:  #8f9aae /*#285bff #8ab4f8*/;
+/*    background:  #8f9aae #285bff #8ab4f8;*/
+	background: #463023;
     color: white;
 }
 
 #bluetooth, #network, #pulseaudio, #battery {
 	/*background: #3691ff;*/
-	background: #3691ff /*#8f9aae*/;
+/*	background: #3691ff #8f9aae;*/
+	background: #e99d20;
 	margin-right: 0px;
 	border-radius: 0px;
 	padding: 5px 5px;
@@ -129,12 +133,10 @@ tooltip label {
 }
 
 #clock {
-	background-color: #8f9aae;
 	border-radius: 10px;
 }
 
 #window {
-	background-color: #8f9aae /*#285bff*/;
 	border-radius: 10px;
 	border: 10px transparent;
 	margin-left: 10px;

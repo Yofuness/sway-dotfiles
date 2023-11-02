@@ -27,7 +27,7 @@ set $menu wofi --show=drun --linues=5 --prompt=""
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
-output * bg "/home/johann/Pictures/Wallpapers/eberhard-grossgasteiger-Za0wyAjfA18-unsplash.jpg" fill
+output * bg "/home/johann/Pictures/Wallpapers/andrei-lazar-rb5kE1N1mkg-unsplash.jpg" fill
 #output * bg "/home/johann/Pictures/Wallpapers/IMG_2237.JPG" fill
 #
 # Example configuration:
@@ -272,10 +272,10 @@ include $HOME/.config/sway/config.d/*
 # Gaps and window border configuration
 gaps inner 5 
 gaps outer 5 
-client.focused          #285bff #285bff #285bff #285bff #285bff
+client.focused          #e99d20 #e99d20 #e99d20 #e99d20 #e99d20
 client.focused_inactive #282c34 #282c34 #282c34 #282c34 #282c34
 client.urgent           #e06c75 #e06c75 #e06c75 #e06c75 #e06c75
-client.unfocused        #282c34 #282c34 #282c34 #282c34 #282c34
+client.unfocused        #463023 #463023 #463023 #463023 #463023
 
 # Window border removal
 default_border pixel 3
