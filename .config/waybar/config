@@ -13,7 +13,7 @@
     "sway/window": {
 	"format": "{}",
 	"max-length": 30,
-	"icon": false,
+	"icon": true,
     },
     "wlr/workspaces": {
 	"format": "{name}: {icon}",
