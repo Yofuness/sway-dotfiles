@@ -15,13 +15,14 @@
 #outer-box {
 	border-radius: 10px;
 	color: #cdd3e0;
-	background: rgba(40, 44, 59, 0.7);
+/*	background: #1a191e; */
+	background: #463023;
 }
 
 #entry:selected {
 	border-radius: 10;
 	border: none;
-	background:  #3691ff;
+	background: #e99d20;
 	/*color: #cdd3e0;*/
 	color: white;
 }

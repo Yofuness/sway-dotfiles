@@ -72,6 +72,7 @@ export XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #export MANPAGER='nvim +Man!'
 export MANPAGER='less'
+export GOPATH=$HOME/.local/share/Go
 
 # Source stuff from private zsh config
 source $HOME/.config/zsh/private

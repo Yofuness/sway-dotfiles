@@ -790,7 +790,7 @@ window:
 colors:
   # Default colors
   primary:
-    background: '#000000'
+    background: '#1a191e'
     foreground: '#ffffff'
   cursor:
     text: '#F81CE5'
