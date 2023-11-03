@@ -73,6 +73,8 @@ export XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots
 #export MANPAGER='nvim +Man!'
 export MANPAGER='less'
 export GOPATH=$HOME/.local/share/Go
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-P -c"
 
 # Source stuff from private zsh config
 source $HOME/.config/zsh/private
