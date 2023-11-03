@@ -830,23 +830,23 @@ colors:
 
   # Normal colors
   normal:
-    black: '#1a191e'  # Modified to match background color
-    red: '#fe0100'  # Original color
-    green: '#6b753c'  # Adjusted for a brighter green
-    yellow: '#feff00'  # Original color
-    blue: '#0066ff'  # Original color
-    magenta: '#cc00ff'  # Original color
-    cyan: '#00ffff'  # Original color
+    black: '#1a191e'  # Matched to the background color
+    red: '#d45552'  # Toned down red
+    green: '#6d9942'  # Increased contrast green
+    yellow: '#d8ba49'  # Adjusted for a matching yellow
+    blue: '#325a9e'  # Adjusted to match the background color
+    magenta: '#9a5ca0'  # Adjusted for a matching magenta
+    cyan: '#61c2d3'  # Adjusted for a matching cyan
     white: '#d0d0d0'  # Original color
 
   # Bright colors
   bright:
-    black: '#808080'  # Original color
-    red: '#fe0100'  # Original color
-    green: '#6b753c'  # Adjusted for a brighter green
-    yellow: '#feff00'  # Original color
-    blue: '#0066ff'  # Original color
-    magenta: '#cc00ff'  # Original color
-    cyan: '#00ffff'  # Original color
+    black: '#5a542f'  # Adjusted for a matching black
+    red: '#d45552'  # Toned down red
+    green: '#6d9942'  # Increased contrast green
+    yellow: '#d8ba49'  # Adjusted for a matching yellow
+    blue: '#325a9e'  # Adjusted to match the background color
+    magenta: '#9a5ca0'  # Adjusted for a matching magenta
+    cyan: '#61c2d3'  # Adjusted for a matching cyan
     white: '#FFFFFF'  # Original color
 
