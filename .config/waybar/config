@@ -12,7 +12,7 @@
     },
     "sway/window": {
 	"format": "{}",
-	"max-length": 30,
+	"max-length": 40,
 	"icon": true,
     },
     "wlr/workspaces": {

@@ -1,4 +1,4 @@
-* {
+/* * {
 	border: none;
 	border-radius: 0;
 	font-family: JetBrainsMono Nerd Font;
@@ -16,7 +16,7 @@
 	border-radius: 10px;
 	color: #cdd3e0;
 /*	background: #1a191e; */
-	background: #463023;
+/*	background: #463023;
 }
 
 #entry:selected {
@@ -24,9 +24,42 @@
 	border: none;
 	background: #e99d20;
 	/*color: #cdd3e0;*/
-	color: white;
-}
+/*	color: white;
+}  
+*/
 
 #text {
 	padding: 0 0 0 5;
 }
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 10;
+}
+
+#window {
+  border-radius: 10px;
+  color: #d3d7de;  /* Lighter grey for contrast */
+}
+
+#outer-box {
+  border-radius: 10px;
+  color: #d3d7de;  /* Lighter grey for contrast */
+  background: #404452;  /* Dark grey background */
+}
+
+#entry:selected {
+  border-radius: 10px;
+  border: none;
+  background: #90caf9;  /* Libadwaita accent blue */
+  color: white;
+}
+
+#text {
+  padding: 0 0 0 5px;
+}
+

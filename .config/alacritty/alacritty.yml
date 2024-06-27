@@ -785,68 +785,104 @@ font:
 #background_opacity: 0.7
 window:
   opacity: 0.7
+  ###### Alacritty-themes config ######
+  #colors:
+  #  # Default colors
+  #  primary:
+  #    background: '#1a191e'
+  #    foreground: '#ffffff'
+  #  cursor:
+  #    text: '#F81CE5'
+  #    cursor: '#ffffff'
+  #
+  #  # Normal colors
+  #  normal:
+  #    black: '#000000'
+  #    red: '#fe0100'
+  #    green: '#33ff00'
+  #    yellow: '#feff00'
+  #    blue: '#0066ff'
+  #    magenta: '#cc00ff'
+  #    cyan: '#00ffff'
+  #    white: '#d0d0d0'
+  #
+  #  # Bright colors
+  #  bright:
+  #    black: '#808080'
+  #    red: '#fe0100'
+  #    green: '#33ff00'
+  #    yellow: '#feff00'
+  #    blue: '#0066ff'
+  #    magenta: '#cc00ff'
+  #    cyan: '#00ffff'
+  #    white: '#FFFFFF'
+  #theme: Hyper
 
-    ###### Alacritty-themes config ######
     #colors:
-    #  # Default colors
+    #  name: Marrakesh (light)
+    #  author: Chris Kempson
     #  primary:
-    #    background: '#1a191e'
-    #    foreground: '#ffffff'
+    #    background: "#faf0a5"
+    #    foreground: "#5f5b17"
     #  cursor:
-    #    text: '#F81CE5'
-    #    cursor: '#ffffff'
-    #
-    #  # Normal colors
+    #    text: "#faf0a5"
+    #    cursor: "#5f5b17"
     #  normal:
-    #    black: '#000000'
-    #    red: '#fe0100'
-    #    green: '#33ff00'
-    #    yellow: '#feff00'
-    #    blue: '#0066ff'
-    #    magenta: '#cc00ff'
-    #    cyan: '#00ffff'
-    #    white: '#d0d0d0'
-    #
-    #  # Bright colors
+    #    black: "#201602"
+    #    red: "#c35359"
+    #    green: "#18974e"
+    #    yellow: "#a88339"
+    #    blue: "#477ca1"
+    #    magenta: "#8868b3"
+    #    cyan: "#75a738"
+    #    white: "#948e48"
     #  bright:
-    #    black: '#808080'
-    #    red: '#fe0100'
-    #    green: '#33ff00'
-    #    yellow: '#feff00'
-    #    blue: '#0066ff'
-    #    magenta: '#cc00ff'
-    #    cyan: '#00ffff'
-    #    white: '#FFFFFF'
-    #theme: Hyper
+    #    black: "#6c6823"
+    #    red: "#c35359"
+    #    green: "#18974e"
+    #    yellow: "#a88339"
+    #    blue: "#477ca1"
+    #    magenta: "#8868b3"
+    #    cyan: "#75a738"
+    #    white: "#faf0a5"
+    #theme: Marrakesh.light
 
 colors:
-  # Default colors
+  # Name can be anything you like
+  name: Libadwaita Inspired
+  # Author information (optional)
+  author: You!
   primary:
-    background: '#1a191e'
-    foreground: '#e99d20'  # Modified to match #e99d20
+    # Background set to Libadwaita white (#ffffff)
+    background: "#ffffff"
+    # Foreground set to Libadwaita black (#111111)
+    foreground: "#111111"
   cursor:
-    text: '#F81CE5'  # Original color
-    cursor: '#e99d20'  # Modified to match #e99d20
-
-  # Normal colors
+    # Text cursor colour matches foreground
+    text: "#111111"
+    # Cursor block colour (optional, can be set to same as text)
+    cursor: "#111111"
   normal:
-    black: '#1a191e'  # Matched to the background color
-    red: '#d45552'  # Toned down red
-    green: '#6d9942'  # Increased contrast green
-    yellow: '#d8ba49'  # Adjusted for a matching yellow
-    blue: '#325a9e'  # Adjusted to match the background color
-    magenta: '#9a5ca0'  # Adjusted for a matching magenta
-    cyan: '#61c2d3'  # Adjusted for a matching cyan
-    white: '#d0d0d0'  # Original color
-
-  # Bright colors
+    # Black set to a dark grey (#404452)
+    black: "#404452"
+    # Colours for other colour terminals can be adjusted here 
+    red: "#e06c75"  # Can be adjusted to a colour of your preference
+    green: "#90caf9"  # Libadwaita accent blue
+    yellow: "#ffc107"  # Example yellow tone
+    blue: "#3f51b5"  # Example blue tone
+    magenta: "#c02942"  # Example magenta tone
+    cyan: "#29abca"  # Example cyan tone
+    # White set to a light grey (#d3d7de) for better contrast
+    white: "#d3d7de"
   bright:
-    black: '#5a542f'  # Adjusted for a matching black
-    red: '#d45552'  # Toned down red
-    green: '#6d9942'  # Increased contrast green
-    yellow: '#d8ba49'  # Adjusted for a matching yellow
-    blue: '#325a9e'  # Adjusted to match the background color
-    magenta: '#9a5ca0'  # Adjusted for a matching magenta
-    cyan: '#61c2d3'  # Adjusted for a matching cyan
-    white: '#FFFFFF'  # Original color
-
+    # Brighter versions of normal colours
+    black: "#80889a"  # Lighter grey
+    red: "#ff0000"  # Can be adjusted
+    green: "#3691ff"  # Can be adjusted
+    yellow: "#ffff00"  # Example yellow
+    blue: "#007bff"  # Example blue
+    magenta: "#ff0080"  # Example magenta
+    cyan: "#00ffff"  # Example cyan
+    # White remains the same as normal for consistency
+    white: "#d3d7de"
+  # You can add other colour palettes here if desired

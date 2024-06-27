@@ -27,7 +27,7 @@ set $menu wofi --show=drun --linues=5 --prompt=""
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg "/home/johann/Pictures/Wallpapers/4K No Logo G655.jpg" fill
-output * bg "/home/johann/Pictures/Wallpapers/andrei-lazar-rb5kE1N1mkg-unsplash.jpg" fill
+output * bg "/home/johann/Pictures/Wallpapers/ameer-basheer-gV6taBJuBTk-unsplash.jpg" fill
 #output * bg "/home/johann/Pictures/Wallpapers/IMG_2237.JPG" fill
 #
 # Example configuration:
@@ -36,7 +36,7 @@ output * bg "/home/johann/Pictures/Wallpapers/andrei-lazar-rb5kE1N1mkg-unsplash.
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
- output eDP-1 scale 1.25
+ output eDP-1 scale 1
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
@@ -272,9 +272,9 @@ include $HOME/.config/sway/config.d/*
 # Gaps and window border configuration
 gaps inner 5 
 gaps outer 5 
-client.focused          #e99d20 #e99d20 #e99d20 #e99d20 #e99d20
-client.focused_inactive #282c34 #282c34 #282c34 #282c34 #282c34
-client.urgent           #e06c75 #e06c75 #e06c75 #e06c75 #e06c75
+client.focused          #90caf9 #90caf9 #90caf9 #90caf9 #90caf9
+client.focused_inactive #111111 #111111 #111111 #111111 #111111
+client.urgent           #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
 client.unfocused        #463023 #463023 #463023 #463023 #463023
 
 # Window border removal
@@ -338,6 +338,7 @@ bindsym ctrl+alt+delete exec systemmenu
 for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [title="Quick Format Citation"] floating enable
 for_window [app_id="com.github.wwmm.easyeffects"] floating enable
+for_window [title="Extension: (Bitwarden Password Manager) - Bitwarden — Mozilla Firefox"] floating enable
 
 # perhaps fix
 exec systemctl --user import-environment
@@ -346,7 +347,7 @@ exec_always import-gsettings
 # Set Font and Theme for GTK applications
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Materia-dark'
+    gsettings set $gnome-schema gtk-theme 'adw-gtk3-dark'
     gsettings set $gnome-schema icon-theme 'ePapirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Ubuntu 11'

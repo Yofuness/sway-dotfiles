@@ -1,23 +1,21 @@
 * {
-    border: none;
-    border-radius: 0;
-    /*font-family:  Roboto, Helvetica, Arial, sans-serif;*/
-    font-family:  JetBrainsMono Nerd Font;
-    font-size: 12px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  /*font-family: Roboto, Helvetica, Arial, sans-serif;*/
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-/*    background: rgba(40, 44, 59, 1) rgba(43, 48, 59, 0.7);*/
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-	background: #1a191e;
-    border: none;
-    color: #cdd3e0;
-    border-radius: 10px;
+  background: #292D3E;  /* Darker grey background */
+  border: none;
+  color: #ffffff;       /* Libadwaita foreground (white) */
+  border-radius: 10px;
 }
 
 tooltip {
-  background: rgba(40, 44, 59, 0.7);
+  background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black */
   border: 1px solid rgba(11, 18, 38, 1);
 }
 tooltip label {
@@ -25,123 +23,109 @@ tooltip label {
 }
 
 #workspaces button {
-    padding: 0 5px;
-    border: none;
-    border-radius: 10px;
-    background: transparent;
-    color: white;
-    /*border-bottom: 3px solid transparent;*/
+  padding: 0 5px;
+  border: none;
+  border-radius: 10px;
+  margin: 5;
+  background: transparent;
+  color: #ffffff;  /* Libadwaita foreground (white) */
 }
 
 #workspaces button.focused {
-/*    background: #3691ff;*/
-	background: #e99d20;
-/*    border-top: 3px solid #463023;*/
-    border-radius: 10px;
-    /*border-bottom: 3px solid white;*/
+  background: #90caf9;  /* Libadwaita accent blue */
+  border-radius: 10px;
 }
 
 #mode, #window, #clock, #battery, #cpu, #ram, #tray, #memory, #temperature, #network,#bluetooth, #pulseaudio {
-    padding: 0 10px;
-    border-radius: 7px;
-    /*border-radius: 5px;*/
-    margin-right: 5px;
-    font-family: Ariel;
-/*    background:  #8f9aae #285bff #8ab4f8;*/
-	background: #463023;
-    color: white;
+  padding: 0 10px;
+  border-radius: 7px;
+  margin-right: 5px;
+  margin: 5;
+  font-family: Arial;
+  background: #404452;  /* Another dark grey option */
+  color: #d3d7de;        /* Lighter text colour for better contrast */
 }
 
 #bluetooth, #network, #pulseaudio, #battery {
-	/*background: #3691ff;*/
-/*	background: #3691ff #8f9aae;*/
-	background: #e99d20;
-	margin-right: 0px;
-	border-radius: 0px;
-	padding: 5px 5px;
+  background: #90caf9;  /* Libadwaita accent blue */
+  margin-right: 0px;
+  border-radius: 0px;
+  padding: 5px 5px;
+  color: #292D3E;  /* Darker grey for better contrast on accent background */
+
+}
+#battery, #bluetooth {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #pulseaudio {
-	border-radius: 10px 0px 0px 10px;
-	padding-left: 10px;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 10px;
 }
 
 #network {
-	border-radius: 0px 10px 10px 0px;
-	padding-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  padding-right: 10px;
+  margin-left: 0;
 }
+
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
-/*
-#temperature {
-	background: #fd7e57;
+  background: #404452;  /* Consistent with other modules */
+  border-bottom: 3px solid white;
 }
 
-#cpu {
-	background: #285bff;
-}
-
-#memory {
-	background: #fc4a6d;
-}
-*/
+/* Removed custom colours for individual modules (temperature, cpu, memory) */
 
 #battery.charging {
-    color: white;
-    /*background-color: #26A65B;*/
-    /*background-color: green;*/
-    animation-name: charging;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: white;
+  animation-name: charging;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes blink {
-    to {
-/*        background-color: #ffffff;*/
-        color: red;
-    }
+  to {
+    color: red;
+  }
 }
 
 @keyframes charging {
-	to {
-		color: #3691ff;
-	}
+  to {
+    color: #3691ff;
+  }
 }
 
 #battery.warning:not(.charging) {
-/*    background: #f53c3c;*/
-    color: black;
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: #d3d7de;  /* Lighter text colour for contrast */
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {
-/*    background: #f53c3c;*/
-    color: black;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: #d3d7de;  /* Lighter text colour for contrast */
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #clock {
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 #window {
-	border-radius: 10px;
-	border: 10px transparent;
-	margin-left: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	color: white;
+  border-radius: 10px;
+  border: 10px transparent;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
 }
 
