@@ -79,7 +79,7 @@ tooltip label {
 /* Removed custom colours for individual modules (temperature, cpu, memory) */
 
 #battery.charging {
-  color: white;
+  color: #292D3E;
   animation-name: charging;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -95,7 +95,7 @@ tooltip label {
 
 @keyframes charging {
   to {
-    color: #3691ff;
+    color: #90caf9;
   }
 }
 
