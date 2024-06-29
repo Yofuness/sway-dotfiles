@@ -59,6 +59,13 @@ tooltip label {
   margin-right: 0;
 }
 
+#custom-spotify {
+  background-color: #26A269;
+  border-radius: 10;
+  margin: 5;
+  padding: 0 5 0 5;
+}
+
 #pulseaudio {
   border-radius: 10px 0px 0px 10px;
   padding-left: 10px;

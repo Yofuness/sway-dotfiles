@@ -275,7 +275,7 @@ gaps outer 5
 client.focused          #90caf9 #90caf9 #90caf9 #90caf9 #90caf9
 client.focused_inactive #111111 #111111 #111111 #111111 #111111
 client.urgent           #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
-client.unfocused        #463023 #463023 #463023 #463023 #463023
+client.unfocused        #242424 #242424 #242424 #242424 #242424
 
 # Window border removal
 default_border pixel 3
@@ -315,7 +315,7 @@ bindsym $mod+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot sav
 
 # My hotkeys for starting applications
 # gtk-launch is used so that it's launched according to the .desktop file
-#bindsym $mod+shift+X exec gtk-launch org.gnome.Nautilus
+bindsym $mod+Alt+X exec gtk-launch org.gnome.Nautilus
 #bindsym $mod+shift+X exec gtk-launch nemo
 bindsym $mod+Shift+X exec alacritty -e lf
 #bindsym $mod+shift+X exec gtk-launch nemo
@@ -339,6 +339,11 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [title="Quick Format Citation"] floating enable
 for_window [app_id="com.github.wwmm.easyeffects"] floating enable
 for_window [title="Extension: (Bitwarden Password Manager) - Bitwarden — Mozilla Firefox"] floating enable
+for_window [app_id="nextcloud"] floating enable
+for_window [app_id="nextcloud"] move position cursor
+for_window [app_id="nextcloud"] resize set 400 600
+for_window [app_id="nextcloud"] move down 50
+
 
 # perhaps fix
 exec systemctl --user import-environment
@@ -359,17 +364,28 @@ exec_always {
 	exec_always mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 	# brightness
-	bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
-	bindsym XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+#	bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+#	bindsym XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+  # Brightness raise
+  bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+  # Brightness lower
+  bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 
 
 	exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 	# volume
-	bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
-	bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
-	bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
+#	bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+#	bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+#	bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
+# Volume raise with max value
+  bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise --max-volume 100
+# Volume lower with max value
+  bindsym XF86AudioLowerVolume exec swayosd-client --output-volume lower --max-volume 100
 	bindsym $mod+XF86AudioMute exec pavucontrol
+
+  # Capslock (If you don't want to use the backend)
+  bindsym --release Caps_Lock exec swayosd-client --caps-lock
 
 # Environment variables
 	exec --no-startup-id export XDG_CURRENT_DESKTOP=sway
@@ -387,3 +403,4 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	exec kdeconnect-indicator
 	exec mako
 	exec clight -c /home/johann/.config/clight.conf >> /home/johann/.local/log/clight.log
+  exec swayosd-server
