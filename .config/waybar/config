@@ -3,14 +3,14 @@
     "layer": "top",
     "position": "top",
     "height": 26,
-    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["custom/spotify", "tray", "temperature", "cpu", "memory","pulseaudio", "battery", "bluetooth", "network"],
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
 	"disable-click": false,
     },
-    "sway/window": {
+    "hyprland/window": {
 	"format": "{}",
 	"max-length": 40,
 	"icon": true,

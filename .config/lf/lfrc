@@ -13,6 +13,11 @@ cmd newvim ${{
 	nvim $filename
 }}
 
+cmd nvim ${{
+  clear
+  nvim
+}}
+
 cmd newfolder ${{
 	clear
 	echo "Enter name for new folder: "
@@ -24,3 +29,4 @@ cmd newfolder ${{
 	map D delete
 	map <c-v> newvim
 	map <c-f> newfolder
+  map E nvim

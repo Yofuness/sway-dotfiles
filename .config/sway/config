@@ -184,6 +184,7 @@ bindsym $mod+Shift+Z exec swaylock
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
+    bindsym $mod+q layout default
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -312,6 +313,8 @@ bindsym $mod+bracketright exec mpc seekthrough +00:00:05
 bindsym $mod+shift+P exec grimshot save screen
 bindsym $mod+Alt+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot copy area
 bindsym $mod+P exec XDG_SCREENSHOTS_DIR=$HOME/Pictures/Screenshots/ grimshot save area
+bindsym $mod+Alt+R exec bash -c 'rm recording.mkv screenrec.mkv;wf-recorder -r 60 -g "$(slurp)"'
+bindsym $mod+ctrl+R exec bash -c 'notify-send "Stopping Recording"; kill -2 $(pgrep wf-recorder)'
 
 # My hotkeys for starting applications
 # gtk-launch is used so that it's launched according to the .desktop file
@@ -329,6 +332,7 @@ bindsym $mod+Alt+A   exec bash -c "killall -9 easyeffects; easyeffects --gapplic
 bindsym $mod+Ctrl+A  exec killall -9 easyeffects
 bindsym $mod+Shift+O exec gtk-launch blueberry
 bindsym $mod+Shift+I exec gtk-launch clightc
+bindsym $mod+Alt+V exec gtk-launch virt-manager
 
 # Other Custom Keybinds
 bindsym ctrl+alt+delete exec systemmenu
@@ -343,6 +347,10 @@ for_window [app_id="nextcloud"] floating enable
 for_window [app_id="nextcloud"] move position cursor
 for_window [app_id="nextcloud"] resize set 400 600
 for_window [app_id="nextcloud"] move down 50
+for_window [title="Virtual Machine Manager"] floating enable
+for_window [title="Virtual Machine Manager"] resize set 400 600
+for_window [title="Virtual Machine Manager"] move position 1500 5
+
 
 
 # perhaps fix

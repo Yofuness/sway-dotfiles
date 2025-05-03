@@ -1,53 +1,58 @@
 ignore-empty-password
-font=Ubuntu
+font=JetBrainsMono Nerd Font
 
 clock
 timestr=%I:%M %p
 datestr=%a, %e of %B
 
-#screenshots
 image="/home/johann/Pictures/Wallpapers/ameer-basheer-gV6taBJuBTk-unsplash.jpg"
-#image=/tmp/screen.jpg
-
-#fade-in=1
 
 effect-blur=30x2
-#effect-scale=0.1
 
 indicator
 indicator-radius=240
 indicator-thickness=20
 indicator-caps-lock
 
-key-hl-color=880033
+# Accent blue for key highlights (Libadwaita)
+key-hl-color=90caf9FF
+bs-hl-color=ee2e24FF
 
+# Transparent separator
 separator-color=00000000
 
-inside-color=00000099
-inside-clear-color=ffd20400
-inside-caps-lock-color=009ddc00
-inside-ver-color=d9d8d800
-inside-wrong-color=ee2e2400
+# Inside colors (semi-transparent dark grey)
+#inside-color=1e1e1ecc
+inside-color=0b121ecc
+inside-clear-color=90caf922
+inside-caps-lock-color=90caf922
+inside-ver-color=404452cc
+inside-wrong-color=ee2e2422
 
-ring-color=231f20D9
-ring-clear-color=231f20D9
-ring-caps-lock-color=231f20D9
-ring-ver-color=231f20D9
-ring-wrong-color=231f20D9
+# Ring colors (solid dark grey with full opacity where needed)
+ring-color=404452FF
+ring-clear-color=90caf9FF
+ring-caps-lock-color=90caf9FF
+ring-ver-color=90caf9FF
+ring-wrong-color=ee2e24FF
 
+# Line colors (used for outer ring indicator)
 line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
+line-clear-color=90caf9FF
+line-caps-lock-color=90caf9FF
+line-ver-color=90caf9FF
 line-wrong-color=ee2e24FF
 
-text-clear-color=ffd20400
-text-ver-color=d9d8d800
-text-wrong-color=ee2e2400
+text-clear-color=1976D2FF
+text-ver-color=1976D2FF
+text-wrong-color=ee2e24FF
+text-caps-lock-color=1976D2FF
+text-color=FF7043FF
 
-bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=ffd204FF
+
+# Caps Lock highlight colors
+caps-lock-key-hl-color=90caf9FF
 caps-lock-bs-hl-color=ee2e24FF
+
 disable-caps-lock-text
-text-caps-lock-color=009ddc
 

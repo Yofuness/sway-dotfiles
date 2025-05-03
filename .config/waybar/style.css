@@ -31,7 +31,7 @@ tooltip label {
   color: #ffffff;  /* Libadwaita foreground (white) */
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   background: #90caf9;  /* Libadwaita accent blue */
   border-radius: 10px;
 }
