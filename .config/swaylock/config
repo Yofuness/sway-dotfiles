@@ -8,6 +8,7 @@ datestr=%a, %e of %B
 image="/home/johann/Pictures/Wallpapers/colin-watts-tK7Itp99R6M-unsplash.jpg"
 
 effect-blur=30x2
+effect-vignette=0.2:0.4
 
 indicator
 indicator-radius=240

@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background: #292D3E;  /* Darker grey background */
+  background: #292D3E;   /* Darker grey background */
   border: none;
   color: #ffffff;       /* Libadwaita foreground (white) */
   border-radius: 10px;
